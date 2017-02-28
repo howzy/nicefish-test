@@ -1,0 +1,1 @@
+# example of angular2
