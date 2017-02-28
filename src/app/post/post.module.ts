@@ -6,15 +6,16 @@ import { SharedModule } from '../shared/shared.module';
 import { postRouting } from './post.routes';
 import { PostlistComponent } from './postlist/postlist.component';
 import { PostlistService } from './postlist/services/postlist.service';
+import { BooleanPipe } from '../utils/boolean.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     postRouting,
     SharedModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
   ],
-  declarations: [PostlistComponent],
+  declarations: [PostlistComponent, BooleanPipe],
   exports: [],
   providers: [PostlistService]
 })

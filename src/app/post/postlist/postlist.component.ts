@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
 import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
@@ -15,9 +19,9 @@ export class PostlistComponent implements OnInit {
   currentPage: number = 1;
   totalItems: number;
 
-  searchText: string;
   postList: Array<Post>;
-  // postPage: PostPage;
+  searchText: string;
+  searchTextStream: Subject<string> = new Subject<string>();
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -27,13 +31,22 @@ export class PostlistComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.getPostList(this.searchText, this.currentPage);
     });
+
+    this.searchTextStream
+        .debounceTime(500)
+        .distinctUntilChanged()
+        .subscribe(searchText => {
+          console.log(this.searchText);
+          this.getPostList(this.searchText, this.currentPage);
+        });
   }
 
+  /** 获取列表 */
   getPostList(searchText: string, page: number) {
     const offset = (this.currentPage - 1) * this.itemsPerPage;
     const end = this.currentPage * this.itemsPerPage;
 
-    this.postlistService.getPostList(null, 1).subscribe(res => {
+    this.postlistService.getPostList(searchText, page).subscribe(res => {
       this.totalItems = res.total;
       this.postList = res.items.splice(offset, end > this.totalItems ? this.totalItems : end);
       console.log(this.postList);
@@ -42,11 +55,19 @@ export class PostlistComponent implements OnInit {
     });
   }
 
+  /** 导航 */
   pageChanged(event: any): void {
-    // console.log('Page changed to: ' + event.page);
-    // console.log('Number items per page: ' + event.itemsPerPage);
-    // this.router.navigate(['posts/page/', event.page]);
     this.router.navigateByUrl('posts/page/' + event.page);
+  }
+
+  /** 搜索 */
+  searchChanged($event): void {
+    this.searchTextStream.next(this.searchText);
+  }
+
+  /** 发布文章 */
+  gotoWrite() {
+    this.router.navigateByUrl('user/write');
   }
 
 }

@@ -2,7 +2,7 @@
   "total": 10,
   "items": [
     {
-      "post": "1",
+      "postId": "1",
       "title": "这玩意必须用严格的JSON格式，我也是醉了",
       "postTime": "2016-11-21 10:44",
       "userName": "大漠穷秋",
