@@ -7,6 +7,8 @@ import { postRouting } from './post.routes';
 import { PostlistComponent } from './postlist/postlist.component';
 import { PostlistService } from './postlist/services/postlist.service';
 import { BooleanPipe } from '../utils/boolean.pipe';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostDetailService } from './post-detail/services/post-detail.service';
 
 @NgModule({
   imports: [
@@ -15,8 +17,8 @@ import { BooleanPipe } from '../utils/boolean.pipe';
     SharedModule,
     PaginationModule.forRoot(),
   ],
-  declarations: [PostlistComponent, BooleanPipe],
+  declarations: [PostlistComponent, BooleanPipe, PostDetailComponent],
   exports: [],
-  providers: [PostlistService]
+  providers: [PostlistService, PostDetailService]
 })
 export class PostModule { }
