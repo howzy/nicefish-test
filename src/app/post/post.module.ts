@@ -10,6 +10,8 @@ import { BooleanPipe } from '../utils/boolean.pipe';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostDetailService } from './post-detail/services/post-detail.service';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
+import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
+import { CommentService } from '../comment/services/comment.service';
 
 @NgModule({
   imports: [
@@ -18,8 +20,8 @@ import { PostDetailMainComponent } from './post-detail-main/post-detail-main.com
     SharedModule,
     PaginationModule.forRoot(),
   ],
-  declarations: [PostlistComponent, BooleanPipe, PostDetailComponent, PostDetailMainComponent],
+  declarations: [PostlistComponent, BooleanPipe, PostDetailComponent, PostDetailMainComponent, AddCommentComponent],
   exports: [],
-  providers: [PostlistService, PostDetailService]
+  providers: [PostlistService, PostDetailService, CommentService]
 })
 export class PostModule { }
