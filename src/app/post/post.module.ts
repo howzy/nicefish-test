@@ -9,6 +9,7 @@ import { PostlistService } from './postlist/services/postlist.service';
 import { BooleanPipe } from '../utils/boolean.pipe';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostDetailService } from './post-detail/services/post-detail.service';
+import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { PostDetailService } from './post-detail/services/post-detail.service';
     SharedModule,
     PaginationModule.forRoot(),
   ],
-  declarations: [PostlistComponent, BooleanPipe, PostDetailComponent],
+  declarations: [PostlistComponent, BooleanPipe, PostDetailComponent, PostDetailMainComponent],
   exports: [],
   providers: [PostlistService, PostDetailService]
 })

@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { PostlistComponent } from './postlist/postlist.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 
 export const postRoutes: Routes = [
   {
@@ -14,8 +14,8 @@ export const postRoutes: Routes = [
     component: PostlistComponent
   },
   {
-    path: 'post/postdetail/:postId',
-    component: PostDetailComponent
+    path: 'postdetail/:postId',
+    component: PostDetailMainComponent
   }
 ];
 
