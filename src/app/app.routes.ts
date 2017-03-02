@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 export const appRoutes = [
   {
@@ -19,6 +20,10 @@ export const appRoutes = [
   {
     path: 'post',
     loadChildren: './post/post.module#PostModule'
+  },
+  {
+    path: 'register',
+    component: UserRegisterComponent
   }
 ];
 
