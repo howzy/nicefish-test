@@ -61,6 +61,7 @@ export class UserRegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.buildForm();
   }
 
   buildForm() {

@@ -9,10 +9,13 @@ import { appRouting } from './app.routes';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/services/user-register.service';
 
+import { EqualValidator } from './utils/equal-validator.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserRegisterComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,

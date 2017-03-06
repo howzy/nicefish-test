@@ -7,7 +7,7 @@ import { User } from '../../model/user-model';
 
 @Injectable()
 export class UserRegisterService {
-  userRegisterURL = 'mock-date/user-register-mock.json';
+  userRegisterURL = 'mock-data/user-register-mock.json';
   testEmailURL = '';
   subject: Subject<User> = new Subject<User>();
 
