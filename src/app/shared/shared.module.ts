@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { UserLoginComponent } from '../user/user-login/user-login.component';
+import { UserInfoComponent } from '../user/user-info/user-info.component';
+import { UserProfileComponent } from '../user/user-profile/user-profile.component';
 
 @NgModule({
   imports: [
@@ -11,10 +13,14 @@ import { UserLoginComponent } from '../user/user-login/user-login.component';
   ],
   exports: [
     FormsModule,
-    UserLoginComponent
+    UserLoginComponent,
+    UserInfoComponent,
+    UserProfileComponent
   ],
   declarations: [
-    UserLoginComponent
+    UserLoginComponent,
+    UserInfoComponent,
+    UserProfileComponent
   ]
 })
 export class SharedModule { }
