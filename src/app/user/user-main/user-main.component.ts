@@ -12,4 +12,8 @@ export class UserMainComponent implements OnInit {
   ngOnInit() {
   }
 
+  doFollow() {
+    alert('自己不能关注自己！');
+  }
+
 }

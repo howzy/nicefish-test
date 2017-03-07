@@ -1,3 +1,11 @@
-<p>
-  user-main works!
-</p>
+<div class="user-main-container">
+  <div class="row">
+    <div class="col-sm-9">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-sm-3">
+      <app-user-info panelTitle="用户信息" (follow)="doFollow()"></app-user-info>
+      <div class="list-group"></div>
+    </div>
+  </div>
+</div>
