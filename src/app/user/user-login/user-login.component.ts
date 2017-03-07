@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
 
   /** 跳转到找回密码页面 */
   forgetPwd(): void {
-    this.router.navigateByUrl('forgetPwd');
+    this.router.navigateByUrl('forgetpwd');
   }
 
 }
