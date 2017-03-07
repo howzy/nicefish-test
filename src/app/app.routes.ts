@@ -29,6 +29,10 @@ export const appRoutes = [
   {
     path: 'login',
     component: UserLoginComponent
+  },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule'
   }
 ];
 
