@@ -21,33 +21,25 @@
 					<a href="http://git.oschina.net/mumu-osc/NiceFish" data-toggle="dropdown" class="dropdown-toggle" target="_blank">NiceFish</a>
 				</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
+			<ul *ngIf="!currentUser?.username" class="nav navbar-nav navbar-right">
 				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a [routerLink]="['/login']">登录</a>
+					<a routerLink="login">登录</a>
 				</li>
 				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a [routerLink]="['/register']">注册</a>
+					<a routerLink="register">注册</a>
 				</li>
 			</ul>
-			<!--<ul *ngIf="!currentUser?.username" class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="login">{{'app.login'}}</a>
+			<ul *ngIf="currentUser?.username" class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active">
+          <a routerLink="user">欢迎你：{{currentUser?.username}}</a>
         </li>
         <li routerLinkActive="active">
-          <a routerLink="register">注册</a>
-        </li>
-      </ul>-->
-			<!--<ul *ngIf="currentUser?.username" class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active">
-          <a routerLink="user">{{'app.welcome'}}：{{currentUser?.username}}</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="manage">{{'app.console'}}</a>
+          <a routerLink="manage">管理后台</a>
         </li>
         <li>
-          <a href="javascript:void(0);" (click)="doLogout()">{{'app.logout'}}</a>
+          <a href="javascript:void(0);" (click)="doLogout()">退出</a>
         </li>
-      </ul>-->
+      </ul>
 		</div>
 	</div>
 </div>
