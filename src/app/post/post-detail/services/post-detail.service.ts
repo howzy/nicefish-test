@@ -15,7 +15,7 @@ export class PostDetailService {
       .map(res => res.json())
       .catch(error => {
         return Observable.throw(error || 'Serve error');
-      })
+      });
   }
 
 }

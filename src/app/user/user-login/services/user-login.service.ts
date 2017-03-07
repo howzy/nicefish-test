@@ -7,7 +7,7 @@ import { User } from '../../model/user-model';
 
 @Injectable()
 export class UserLoginService {
-  userLoginURL = 'data-mock/user-login-mock.json';
+  userLoginURL = 'mock-data/user-login-mock.json';
   subject: Subject<User> = new Subject<User>();
 
   constructor(private http: Http) { }
@@ -25,6 +25,7 @@ export class UserLoginService {
           localStorage.setItem('currentUser', JSON.stringify(resUser));
           this.subject.next(resUser);
         }
+        return res;
       })
       .subscribe(
         data => console.log('login success' + data),
