@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ManageMainComponent } from './manage-main/manage-main.component';
 
+import { SharedModule } from '../shared/shared.module';
 import { manageRouting } from './manage.routes';
-import { PostTableComponent } from './post-table/post-table.component';
+import { ManageMainComponent } from './manage-main/manage-main.component';
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     manageRouting
   ],
-  declarations: [ManageMainComponent, PostTableComponent]
+  declarations: [ManageMainComponent],
+  providers: []
 })
 export class ManageModule { }
