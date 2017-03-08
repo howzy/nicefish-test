@@ -2,12 +2,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ManageMainComponent } from './manage-main/manage-main.component';
 import { PostTableComponent } from './post-table/post-table.component';
+import { AuthGuard } from '../user/user-login/services/auth-guard';
 
 const manageRoutes: Routes = [
   {
     path: '',
     component: ManageMainComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { appRouting } from './app.routes';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/services/user-register.service';
+import { AuthGuard } from './user/user-login/services/auth-guard';
 import { UserLoginService } from './user/user-login/services/user-login.service';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { ForgetPwdService } from './user/forget-pwd/services/forget-pwd.service';
@@ -30,7 +31,7 @@ import { EqualValidator } from './utils/equal-validator.directive';
     appRouting,
     ReactiveFormsModule
   ],
-  providers: [UserRegisterService, UserLoginService, ForgetPwdService],
+  providers: [UserRegisterService, UserLoginService, AuthGuard, ForgetPwdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
