@@ -6,6 +6,7 @@ import { AuthGuard } from '../user/user-login/services/auth-guard';
 import { CommentTableComponent } from './comment-table/comment-table.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
+import { SysParamComponent } from './sys-param/sys-param.component';
 
 const manageRoutes: Routes = [
   {
@@ -33,6 +34,18 @@ const manageRoutes: Routes = [
       {
         path: 'usertable/newuser',
         component: UserProfileComponent
+      },
+      {
+        path: 'usertable/edituser/:userId',
+        component: UserProfileComponent
+      },
+      {
+        path: 'sysparam',
+        component: SysParamComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'posttable/page/1'
       }
     ]
   }

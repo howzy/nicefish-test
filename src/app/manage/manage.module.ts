@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { manageRouting } from './manage.routes';
 import { ManageMainComponent } from './manage-main/manage-main.component';
 import { UserTableComponent } from './user-table/user-table.component';
+import { SysParamComponent } from './sys-param/sys-param.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { UserTableComponent } from './user-table/user-table.component';
     CommonModule,
     manageRouting
   ],
-  declarations: [ManageMainComponent, UserTableComponent],
+  declarations: [ManageMainComponent, UserTableComponent, SysParamComponent],
   providers: []
 })
 export class ManageModule { }
