@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Post } from '../../../post/model/post-model';
+import { PostPage } from '../../../post/model/post-model';
 
 @Injectable()
 export class PostTableService {
@@ -13,7 +13,7 @@ export class PostTableService {
   constructor(private http: Http) { }
 
   /** 获取文章列表 */
-  getPostTable(): Observable<Post[]> {
+  getPostTable(): Observable<PostPage> {
     return this.http.get(this.postTableURL)
       .map(res => res.json())
       .catch(error => {
