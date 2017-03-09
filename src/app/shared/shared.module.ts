@@ -10,6 +10,7 @@ import { UserProfileComponent } from '../user/user-profile/user-profile.componen
 import { FormControlComponent } from '../user/user-profile/dynamic-form/form-control.component';
 import { PostTableComponent } from '../manage/post-table/post-table.component';
 import { PostTableService } from '../manage/post-table/services/post-table.service';
+import { CommentTableComponent } from '../manage/comment-table/comment-table.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { PostTableService } from '../manage/post-table/services/post-table.servi
     UserInfoComponent,
     UserProfileComponent,
     PostTableComponent,
+    CommentTableComponent,
     PaginationModule,
     ModalModule
   ],
@@ -33,7 +35,8 @@ import { PostTableService } from '../manage/post-table/services/post-table.servi
     UserInfoComponent,
     UserProfileComponent,
     FormControlComponent,
-    PostTableComponent
+    PostTableComponent,
+    CommentTableComponent
   ],
   providers: [PostTableService]
 })
