@@ -16,13 +16,17 @@ import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { ForgetPwdService } from './user/forget-pwd/services/forget-pwd.service';
 
 import { EqualValidator } from './utils/equal-validator.directive';
+import { ChartComponent } from './chart/chart.component';
+import { EchartOptionDirective } from './chart/echart-option.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegisterComponent,
     EqualValidator,
-    ForgetPwdComponent
+    ForgetPwdComponent,
+    ChartComponent,
+    EchartOptionDirective
   ],
   imports: [
     BrowserModule,

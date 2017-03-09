@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
+import { ChartComponent } from './chart/chart.component';
 
 export const appRoutes = [
   {
@@ -42,6 +43,14 @@ export const appRoutes = [
   {
     path: 'manage',
     loadChildren: './manage/manage.module#ManageModule'
+  },
+  {
+    path: 'echart',
+    component: ChartComponent
+  },
+  {
+    path: '**',
+    redirectTo: './home/home.module#HomeModule'
   }
 ];
 
