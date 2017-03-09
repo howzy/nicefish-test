@@ -4,6 +4,7 @@ import { ManageMainComponent } from './manage-main/manage-main.component';
 import { PostTableComponent } from './post-table/post-table.component';
 import { AuthGuard } from '../user/user-login/services/auth-guard';
 import { CommentTableComponent } from './comment-table/comment-table.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 const manageRoutes: Routes = [
   {
@@ -23,6 +24,10 @@ const manageRoutes: Routes = [
       {
         path: 'commenttable/page/:page',
         component: CommentTableComponent
+      },
+      {
+        path: 'usertable/page/:page',
+        component: UserTableComponent
       }
     ]
   }
