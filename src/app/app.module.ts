@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ import { EqualValidator } from './utils/equal-validator.directive';
     FormsModule,
     HttpModule,
     appRouting,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule.forRoot()
   ],
   providers: [UserRegisterService, UserLoginService, AuthGuard, ForgetPwdService],
   bootstrap: [AppComponent]

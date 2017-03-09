@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import './operators';
@@ -6,6 +6,7 @@ import './operators';
 import { UserLoginService } from './user/user-login/services/user-login.service';
 import { UserRegisterService } from './user/user-register/services/user-register.service';
 import { User } from './user/model/user-model';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,11 @@ export class AppComponent implements OnInit {
     public elementRef: ElementRef,
     private userLoginService: UserLoginService,
     private userRegisterService: UserRegisterService,
-  ) { }
+    private toastr: ToastsManager,
+    private vcr: ViewContainerRef
+  ) {
+    this.toastr.setRootViewContainerRef(vcr);
+  }
 
   ngOnInit() {
     this.globalClickCallbackFn = this.renderer.listen(this.elementRef.nativeElement, 'click', event => {
@@ -49,6 +54,7 @@ export class AppComponent implements OnInit {
 
   doLogout(): void {
     this.userLoginService.logout();
+    this.toastr.success('退出成功！', '系统提示');
     this.router.navigateByUrl('');
   }
 }
